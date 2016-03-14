@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.workflow.demo.model.Feedback" />
+	<class name="com.workflow.demo.model.impl.FeedbackImpl" table="test_Feedback">
+		<cache usage="read-write" />
+		<id name="feedbackId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="feedbackDate" type="org.hibernate.type.TimestampType" />
+		<property name="feedbackText" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="feedbackSubject" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="feedBackStatus" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="statusByUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="statusDate" type="org.hibernate.type.TimestampType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+</hibernate-mapping>
